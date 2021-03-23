@@ -1,11 +1,31 @@
 ---
 
-- name: copying the contents to remote 
+- name: copying the contents to remote
   become: true
   copy:
     src: files/index.html
-    dest: /var/www/html/ 
+    dest: /var/www/html/
     owner: root
     owner: root
     mode: 0755
   notify: restart httpd
+
+- name: "Mariadb-Server - Resetting Root Password"
+  become: true
+  ignore_errors: true
+  mysql_user:
+    login_user: root
+    login_password: ""
+    user: root
+    password: "{{ mariadb_root }}"
+    host_all: true
+    state: present
+
+- name: Removes all anonymous user accounts
+  become: true
+  mysql_user:
+        login_user: root
+        login_password: "{{ mariadb_root }}"
+        user: ""
+        host_all: true
+        state: absent

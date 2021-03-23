@@ -5,3 +5,4 @@
 #vars:
   package: Apache
   version: 2.4.46
+  mariadb_root: myroot123
