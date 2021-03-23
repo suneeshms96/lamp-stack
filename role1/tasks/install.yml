@@ -1,0 +1,10 @@
+---
+ - name: Installing Apache Webserver
+   become: true
+   yum: 
+     name: httpd
+     state: present
+
+ - name: Installation completed
+   debug:
+     var: "version"

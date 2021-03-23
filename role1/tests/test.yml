@@ -1,0 +1,5 @@
+---
+- hosts: localhost
+  remote_user: root
+  roles:
+    - /home/ec2-user/ansible/ansible-LAMP/ansible-galaxy/role1

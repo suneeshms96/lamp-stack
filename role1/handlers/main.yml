@@ -1,0 +1,9 @@
+---
+# handlers file for /home/ec2-user/ansible/ansible-LAMP/ansible-galaxy/role1
+#
+- name: restart httpd
+  become: true
+  service: 
+    name: httpd
+    state: restarted
+    enabled: true

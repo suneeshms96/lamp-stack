@@ -1,0 +1,7 @@
+---
+- name: restarting httpd
+  become: true
+  service:
+    name: httpd
+    state: restarted
+    enabled: true

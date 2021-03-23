@@ -1,0 +1,7 @@
+---
+# vars file for /home/ec2-user/ansible/ansible-LAMP/ansible-galaxy/role1
+#
+#
+#vars:
+  package: Apache
+  version: 2.4.46

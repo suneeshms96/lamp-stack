@@ -1,0 +1,11 @@
+---
+
+- name: copying the contents to remote 
+  become: true
+  copy:
+    src: files/index.html
+    dest: /var/www/html/ 
+    owner: root
+    owner: root
+    mode: 0755
+  notify: restart httpd

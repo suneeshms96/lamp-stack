@@ -1,0 +1,6 @@
+---
+# tasks file for /home/ec2-user/ansible/ansible-LAMP/ansible-galaxy/role1
+
+- import_tasks: install.yml
+- import_tasks: configure.yml
+- import_tasks: service.yml
